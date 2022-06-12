@@ -19,3 +19,14 @@
 <view class="padding flex flex-direction">
   <button bindtap='playRecord' class="cu-btn bg-blue lg">播放录音 Play</button>
 </view>
+
+<view class="cu-steps steps-arrow padding-top:10">
+    <view class="cu-item {{index>basics?'':'text-blue'}}" wx:for="{{basicsList}}" >
+      <text class="cuIcon-{{item.icon}}"></text> {{item.name}}
+    </view>
+  </view>
+
+
+  <view class="flex justify-center margin-top margin-bottom" >
+  <button bindtap='gotoRecord2' class="cu-btn bg-blue round lg" form-type="submit" >下一步 Next</button>
+  </view>

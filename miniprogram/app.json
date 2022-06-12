@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ques/ques",
+    "pages/record/record",
+    "pages/record2/record2",
+    "pages/record3/record3",
+    "pages/info/info",
+    "pages/result/result"
+  ],
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#0386f9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/test.png",
+        "selectedIconPath": "images/test_a.png",
+        "text": "测试 Test"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "iconPath": "images/info.png",
+        "selectedIconPath": "images/info_a.png",
+        "text": "信息 Info"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,6 @@
+/* pages/record3/record3.wxss */
+/* pages/Record2/record2.wxss */
+.steps-bottom.cu-steps .cu-item .num::before {
+  content: "\e668";
+  font-family: 'iconfont';
+}

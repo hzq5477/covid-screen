@@ -1,0 +1,38 @@
+<!--pages/info/info.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">信息 Info</view>
+</cu-custom>
+
+  <view class="flex justify-center margin-xl padding-xl">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-cyan shadow'> 获取头像昵称 </button>
+    <block wx:else>
+      <view class='text-center'>
+        <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
+        <view class="padding">  {{userInfo.nickName}}  </view>
+      </view>
+    </block>
+   
+  </view>
+
+  <view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <text class="cuIcon-circlefill text-grey"></text>
+        <text class="text-grey">不知道放什么</text>
+      </view>
+    </view>
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <view class="content">
+        <image src="/images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">不知道放什么</text>
+      </view>
+    </view>
+
+    <view class="cu-item {{menuArrow?'arrow':''}}">
+      <navigator class="content" hover-class="none" url="../info/info" open-type="redirect">
+        <text class="cuIcon-btn text-oliv"></text>
+        <text class="text-grey">历史测试结果</text>
+      </navigator>
+    </view>
+
+  </view>

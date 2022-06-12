@@ -1,0 +1,18 @@
+<!--pages/result/result.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">结果 Result</view>
+</cu-custom>
+
+
+<view class="solids-bottom padding-xs flex align-center">
+ 
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-sl padding">
+        <text class=" cuIcon-roundcheckfill text-green"></text>
+      </view>
+      <view class="padding">恭喜！本次预测结果是您有99%的可能为阴性</view>
+    </view>
+ 
+  </view>
+
+  <button bindtap='gotoInfo' class="cu-btn bg-blue round lg" >回到信息页</button>

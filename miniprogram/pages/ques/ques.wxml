@@ -2,7 +2,8 @@
 	<view slot="backText">返回</view>
 	<view slot="content">基础信息调查 </view>
 </cu-custom>
-<form>
+
+<form bindsubmit="handlerSubmit">
 	
 
 
@@ -11,19 +12,19 @@
         <text class="text-black">First, we need to collect some basic information</text>
   </view>
   <view class="cu-form-group ">
-		<view class="title">是否抽烟 Do You Smoke?</view>
-		<switch></switch>
+		<view class="title" >是否抽烟 Do You Smoke?</view>
+		<switch name="smoke"></switch>
 	</view>
 
 
   <view class="cu-form-group ">
 		<view class="title">是否患有哮喘 Suffering from asthma？</view>
-		<switch></switch>
+		<switch name="asthma"></switch>
 	</view>
 
 	<view class="cu-form-group">
 		<view class="title">您的地址 Your Location</view>
-		<picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+		<picker name="location" mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
 			<view class="picker">
 				{{region[0]}}，{{region[1]}}，{{region[2]}}
 			</view>
@@ -35,47 +36,60 @@
         <text class="text-black">您的近期核酸检测结果\n\n</text>
         <text class="text-black">Recent covid-19 testing status</text>
   </view>
-	<radio-group class="block">
+	<radio-group  name="test"  class="block">
 		<view class="cu-form-group ">
 			<view class="title">阴性 Negative</view>
-			<radio class="radio" checked></radio>
+			<radio  value="0" class="radio " checked></radio>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">阳性 Postive</view>
-			<radio class="red radio"></radio>
+			<radio  value="1" class="red radio"></radio>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">近期没有检测 No recent test</view>
 			<view>
 			
-				<radio class="yellow radio"></radio>
+				<radio  value="-1" class="yellow radio"></radio>
 			</view>
 		</view>
 	</radio-group>
 
-  <view class="solid-bottom text-lg padding">
+
+  <view  class="solid-bottom text-lg padding">
         <text class="text-black">是否出现了下述症状:\n</text>
         <text class="text-black">Do you have any of symptoms beblow?</text>
   </view>
+  <checkbox-group name="symptoms" bindchange="handleItemChange">
 	<view class="cu-form-group">
-		<view class="title">干咳 Dry cough</view>
-		<checkbox></checkbox>
+		<view  class="title">干咳 Dry cough</view>
+		<checkbox  value="dry"></checkbox>
 	</view>
 	<view class="cu-form-group ">
 		<view class="title">湿咳 Wet Cough</view>
-		<checkbox></checkbox>
+		<checkbox  value="wet"></checkbox>
 	</view>
   <view class="cu-form-group ">
 		<view class="title">发烧 Fever</view>
-		<checkbox></checkbox>
+		<checkbox  value="fever"></checkbox>
 	</view>
   <view class="cu-form-group ">
 		<view class="title">胸闷 Tightness in your chest</view>
-		<checkbox></checkbox>
+		<checkbox  value="tight"></checkbox>
 	</view>
-<view class="padding-xl">
+
+	</checkbox-group>
+
+
+  <view class="cu-steps steps-arrow padding-top:10">
+    <view class="cu-item {{index>basics?'':'text-blue'}}" wx:for="{{basicsList}}" >
+      <text class="cuIcon-{{item.icon}}"></text> {{item.name}}
+    </view>
+  </view>
+
+
+<view class="padding">
   <view class="flex justify-center margin-top margin-bottom" >
-  <button bindtap='gotoRecord' class="cu-btn bg-blue round lg" >下一步 Next</button>
+  <button bindtap='gotoRecord' class="cu-btn bg-blue round lg" form-type="submit" >下一步 Next</button>
   </view>
 
 </view>
@@ -83,3 +97,5 @@
 
  
 </form>
+
+

@@ -6,6 +6,10 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    wx.cloud.init({
+      env:"wx83c60766360a7946-3d8y0213c1f8a",//云环境ID
+      traceUser:true //是否跟踪用户信息（具体可在云开发控制台的运行分析中查看）
+    })
     // 登录
     wx.login({
       success: res => {

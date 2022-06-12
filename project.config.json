@@ -36,7 +36,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.4.2",
-  "appid": "wx2105c7f6bdb05fa1",
+  "appid": "wx83c60766360a7946",
   "projectname": "ColorUI-template",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -44,5 +44,8 @@
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
-  }
+  },
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "srcMiniprogramRoot": "miniprogram/"
 }
